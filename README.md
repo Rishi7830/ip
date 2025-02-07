@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 # Kohli.Kohli project template
+=======
+# Kohli project template
+>>>>>>> e43edb590177c78a85aa39360b14432b570f8d68
 
-This is a project template for a greenfield Java project. It's named after the Java mascot _Duke_. Given below are instructions on how to use it.
+This is a project template for a greenfield Java project. It's named after the Java mascot Kohli. Given below are instructions on how to use it.
 
 ## Setting up in Intellij
 
