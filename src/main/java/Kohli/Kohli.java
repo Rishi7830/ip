@@ -1,3 +1,5 @@
+package Kohli;
+
 import java.util.Scanner;
 
 public class Kohli {
@@ -9,19 +11,19 @@ public class Kohli {
         Scanner scanner = new Scanner(System.in);
 
         String logo = "  _  ___   ____  _      ___ \n"
-                + " | |/ (_) |  _ \\| |    |_ _|\n"
-                + " | ' / _  | | | | |     | | \n"
-                + " | . \\| | | |_| | |___  | | \n"
-                + " |_|\\_\\_| |____/|_____| |___|\n";
+                +     " | |/ (_) |  _ \\| |    |_ _|\n"
+                +     " | ' / _  | | | | |     | | \n"
+                +     " | . \\| | | |_| | |___  | | \n"
+                +     " |_|\\_\\_| |____/|_____| |___|\n";
 
-        String man = " O  \n"
-                + " /|\\ \n"
-                + " / \\ \n";
+        String man =  "  O  \n"
+                +    " /|\\ \n"
+                +    " / \\ \n";
 
         System.out.println(logo);
         System.out.println(man);
         System.out.println("____________________________________________________________");
-        System.out.println("Hello! I'm Kohli\nWhat can I do for you?");
+        System.out.println("Hello! I'm Kohli.\nWhat can I do for you?");
         System.out.println("____________________________________________________________");
 
         while (true) {
@@ -99,8 +101,9 @@ public class Kohli {
             System.out.println("____________________________________________________________");
         } else {
             System.out.println("____________________________________________________________");
-            System.out.println("Oh no! Your Task list is full! Complete some tasks first.");
+            System.out.println("Oh no! Your Kohli.Task list is full! Complete some tasks first.");
             System.out.println("____________________________________________________________");
         }
     }
 }
+
