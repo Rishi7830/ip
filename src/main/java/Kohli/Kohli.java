@@ -54,6 +54,7 @@ public class Kohli {
             String[] inputParts = userInput.split(" ", 2);
             String command = inputParts[0];
 
+<<<<<<< HEAD
             try {
                 if (command.equalsIgnoreCase("bye")) {
                     System.out.println("____________________________________________________________");
@@ -71,6 +72,23 @@ public class Kohli {
                     if (inputParts.length < 2) throw new KohliException("Please provide a task number to mark.");
                     int index = Integer.parseInt(inputParts[1]) - 1;
                     if (index < 0 || index >= taskCount) throw new KohliException("Invalid task number.");
+=======
+            if (command.equalsIgnoreCase("bye")) {
+                System.out.println("____________________________________________________________");
+                System.out.println("Bye. Hope to see you again soon! Let's complete even more tasks together :)");
+                System.out.println("____________________________________________________________");
+                break;
+            } else if (command.equalsIgnoreCase("list")) {
+                System.out.println("____________________________________________________________");
+                System.out.println("Here are the tasks in your to-do list:");
+                for (int i = 0; i < taskCount; i++) {
+                    System.out.println((i + 1) + ". " + tasks[i]);
+                }
+                System.out.println("____________________________________________________________");
+            } else if (command.equalsIgnoreCase("mark") && inputParts.length > 1) {
+                int index = Integer.parseInt(inputParts[1]) - 1;
+                if (index >= 0 && index < taskCount) {
+>>>>>>> master
                     tasks[index].markAsDone();
                     System.out.println("____________________________________________________________");
                     System.out.println("Nice! Great job! I've marked this task as done:");
@@ -126,4 +144,8 @@ public class Kohli {
             System.out.println("____________________________________________________________");
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master
