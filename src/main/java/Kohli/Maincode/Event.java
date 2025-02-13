@@ -1,4 +1,4 @@
-package Kohli;
+package Kohli.Maincode;
 
 public class Event extends Task {
     protected String from;

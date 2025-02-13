@@ -1,4 +1,4 @@
-package Kohli;
+package Kohli.Maincode;
 
 import java.util.Scanner;
 
@@ -126,4 +126,3 @@ public class Kohli {
         }
     }
 }
-
