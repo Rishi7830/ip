@@ -33,7 +33,7 @@ public class Kohli {
 
             if (command.equalsIgnoreCase("bye")) {
                 System.out.println("____________________________________________________________");
-                System.out.println("Bye. Hope to see you again soon! Let's complete more tasks together :)");
+                System.out.println("Bye. Hope to see you again soon! Let's complete even more tasks together :)");
                 System.out.println("____________________________________________________________");
                 break;
             } else if (command.equalsIgnoreCase("list")) {
@@ -106,4 +106,3 @@ public class Kohli {
         }
     }
 }
-
