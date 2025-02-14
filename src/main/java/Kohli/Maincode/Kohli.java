@@ -30,18 +30,18 @@ public class Kohli {
         System.out.println("____________________________________________________________");
 
         // Display Menu of Commands
-        System.out.println("\n✨ Available Commands ✨");
-        System.out.println("1️⃣  todo <task>                - Adds a To-Do task");
-        System.out.println("2️⃣  deadline <task> /by <time> - Adds a Deadline task");
-        System.out.println("3️⃣  event <task> /from <start> /to <end> - Adds an Event task");
-        System.out.println("4️⃣  list                        - Shows all tasks");
-        System.out.println("5️⃣  mark <task number>          - Marks a task as done");
-        System.out.println("6️⃣  unmark <task number>        - Unmarks a task");
-        System.out.println("7️⃣  bye                         - Exits the chatbot");
+        System.out.println("Here are the Available Commands Kohli bot can do for you :)");
+        System.out.println("1️.  todo <task>                - Adds a To-Do task");
+        System.out.println("2️.  deadline <task> /by <time> - Adds a Deadline task");
+        System.out.println("3️.  event <task> /from <start> /to <end> - Adds an Event task");
+        System.out.println("4️.  list                        - Shows all tasks");
+        System.out.println("5️.  mark <task number>          - Marks a task as done");
+        System.out.println("6️.  unmark <task number>        - Unmarks a task");
+        System.out.println("7️.  bye                         - Exits the chatbot");
         System.out.println("____________________________________________________________");
 
         // Display Possible Errors
-        System.out.println("\n⚠️  Possible Errors ⚠️");
+        System.out.println("⚠️  Possible Errors ⚠️");
         System.out.println("❌ Missing task description (e.g., 'todo' alone is invalid)");
         System.out.println("❌ Incorrect command format (e.g., missing /by for deadlines)");
         System.out.println("❌ Task number out of range for mark/unmark");
