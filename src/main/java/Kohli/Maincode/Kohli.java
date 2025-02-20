@@ -1,26 +1,25 @@
 package Kohli.Maincode;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Kohli {
-    private static final int MAX_TASKS = 100;
-    private static Task[] tasks = new Task[MAX_TASKS];
-    private static int taskCount = 0;
+    private static ArrayList<Task> tasks = new ArrayList<>();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         // ASCII Logo
         String logo = "  _  ___   ____  _      ___ \n"
-                +     " | |/ (_) |  _ \\| |    |_ _|\n"
-                +     " | ' / _  | | | | |     | | \n"
-                +     " | . \\| | | |_| | |___  | | \n"
-                +     " |_|\\_\\_| |____/|_____| |___|\n";
+                + " | |/ (_) |  _ \\| |    |_ _|\n"
+                + " | ' / _  | | | | |     | | \n"
+                + " | . \\| | | |_| | |___  | | \n"
+                + " |_|\\_\\_| |____/|_____| |___|\n";
 
         // ASCII Man
-        String man =  "  O  \n"
-                +    " /|\\ \n"
-                +    " / \\ \n";
+        String man = "  O  \n"
+                + " /|\\ \n"
+                + " / \\ \n";
 
         System.out.println(logo);
         System.out.println(man);
@@ -37,15 +36,8 @@ public class Kohli {
         System.out.println("4️.  list                        - Shows all tasks");
         System.out.println("5️.  mark <task number>          - Marks a task as done");
         System.out.println("6️.  unmark <task number>        - Unmarks a task");
-        System.out.println("7️.  bye                         - Exits the chatbot");
-        System.out.println("____________________________________________________________");
-
-        // Display Possible Errors
-        System.out.println("⚠️  Possible Errors ⚠️");
-        System.out.println("❌ Missing task description (e.g., 'todo' alone is invalid)");
-        System.out.println("❌ Incorrect command format (e.g., missing /by for deadlines)");
-        System.out.println("❌ Task number out of range for mark/unmark");
-        System.out.println("❌ Unrecognized command entered");
+        System.out.println("7️.  delete <task number>        - Deletes a task");
+        System.out.println("8️.  bye                         - Exits the chatbot");
         System.out.println("____________________________________________________________");
 
         while (true) {
@@ -56,52 +48,45 @@ public class Kohli {
             try {
                 if (command.equalsIgnoreCase("bye")) {
                     System.out.println("____________________________________________________________");
-                    System.out.println("Bye. Hope to see you again soon! Let's complete more tasks together :)");
+                    System.out.println("Bye. Hope to see you again soon!");
                     System.out.println("____________________________________________________________");
                     break;
                 } else if (command.equalsIgnoreCase("list")) {
                     System.out.println("____________________________________________________________");
                     System.out.println("Here are the tasks in your to-do list:");
-                    for (int i = 0; i < taskCount; i++) {
-                        System.out.println((i + 1) + ". " + tasks[i]);
+                    for (int i = 0; i < tasks.size(); i++) {
+                        System.out.println((i + 1) + ". " + tasks.get(i));
                     }
                     System.out.println("____________________________________________________________");
                 } else if (command.equalsIgnoreCase("mark")) {
-                    if (inputParts.length < 2) throw new KohliException("Please provide a task number to mark.");
                     int index = Integer.parseInt(inputParts[1]) - 1;
-                    if (index < 0 || index >= taskCount) throw new KohliException("Invalid task number.");
-                    tasks[index].markAsDone();
+                    tasks.get(index).markAsDone();
                     System.out.println("____________________________________________________________");
-                    System.out.println("Nice! Great job! I've marked this task as done:");
-                    System.out.println("  " + tasks[index]);
+                    System.out.println("Nice! I've marked this task as done:");
+                    System.out.println("  " + tasks.get(index));
                     System.out.println("____________________________________________________________");
                 } else if (command.equalsIgnoreCase("unmark")) {
-                    if (inputParts.length < 2) throw new KohliException("Please provide a task number to unmark.");
                     int index = Integer.parseInt(inputParts[1]) - 1;
-                    if (index < 0 || index >= taskCount) throw new KohliException("Invalid task number.");
-                    tasks[index].unmarkAsDone();
+                    tasks.get(index).unmarkAsDone();
                     System.out.println("____________________________________________________________");
                     System.out.println("OK, I've marked this task as not done yet:");
-                    System.out.println("  " + tasks[index]);
+                    System.out.println("  " + tasks.get(index));
                     System.out.println("____________________________________________________________");
                 } else if (command.equalsIgnoreCase("todo")) {
-                    if (inputParts.length < 2 || inputParts[1].trim().isEmpty()) throw new KohliException("Oops! The description of a todo cannot be empty.");
                     addTask(new Todo(inputParts[1]));
                 } else if (command.equalsIgnoreCase("deadline")) {
-                    if (inputParts.length < 2 || inputParts[1].trim().isEmpty()) throw new KohliException("Oops! The description of a deadline cannot be empty.");
                     String[] deadlineParts = inputParts[1].split(" /by ", 2);
-                    if (deadlineParts.length < 2) throw new KohliException("Invalid format! Use: deadline <task> /by <time>");
                     addTask(new Deadline(deadlineParts[0], deadlineParts[1]));
                 } else if (command.equalsIgnoreCase("event")) {
-                    if (inputParts.length < 2 || inputParts[1].trim().isEmpty()) throw new KohliException("Oops! The description of an event cannot be empty.");
                     String[] eventParts = inputParts[1].split(" /from ", 2);
-                    if (eventParts.length < 2 || !eventParts[1].contains(" /to ")) throw new KohliException("Invalid format! Use: event <task> /from <start> /to <end>");
                     String[] timeParts = eventParts[1].split(" /to ", 2);
                     addTask(new Event(eventParts[0], timeParts[0], timeParts[1]));
+                } else if (command.equalsIgnoreCase("delete")) {
+                    DeleteTask.removeTask(tasks, Integer.parseInt(inputParts[1]) - 1);
                 } else {
-                    throw new KohliException("Sorry, I don't understand that command. Try 'todo', 'deadline', or 'event'.");
+                    throw new KohliException("Sorry, I don't understand that command.");
                 }
-            } catch (KohliException | NumberFormatException e) {
+            } catch (Exception e) {
                 System.out.println("____________________________________________________________");
                 System.out.println(e.getMessage());
                 System.out.println("____________________________________________________________");
@@ -111,18 +96,12 @@ public class Kohli {
     }
 
     private static void addTask(Task task) {
-        if (taskCount < MAX_TASKS) {
-            tasks[taskCount] = task;
-            taskCount++;
-            System.out.println("____________________________________________________________");
-            System.out.println("Got it. I've added this task:");
-            System.out.println("  " + task);
-            System.out.println("Now you have " + taskCount + " tasks in the list.");
-            System.out.println("____________________________________________________________");
-        } else {
-            System.out.println("____________________________________________________________");
-            System.out.println("Oh no! Your task list is full! Complete some tasks first.");
-            System.out.println("____________________________________________________________");
-        }
+        tasks.add(task);
+        System.out.println("____________________________________________________________");
+        System.out.println("Got it. I've added this task:");
+        System.out.println("  " + task);
+        System.out.println("Now you have " + tasks.size() + " tasks in the list.");
+        System.out.println("____________________________________________________________");
     }
 }
+
