@@ -8,6 +8,7 @@ public class Kohli {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        tasks = Storage.loadTasksFromFile();
 
         // ASCII Logo
         String logo = "  _  ___   ____  _      ___ \n"
@@ -38,6 +39,17 @@ public class Kohli {
         System.out.println("6️.  unmark <task number>        - Unmarks a task");
         System.out.println("7️.  delete <task number>        - Deletes a task");
         System.out.println("8️.  bye                         - Exits the chatbot");
+<<<<<<< HEAD
+=======
+        System.out.println("____________________________________________________________");
+
+        // Display Possible Errors
+        System.out.println("⚠️  Possible Errors ⚠️");
+        System.out.println("❌ Missing task description (e.g., 'todo' alone is invalid)");
+        System.out.println("❌ Incorrect command format (e.g., missing /by for deadlines)");
+        System.out.println("❌ Task number out of range for mark/unmark/delete");
+        System.out.println("❌ Unrecognized command entered");
+>>>>>>> branch-Level-7
         System.out.println("____________________________________________________________");
 
         while (true) {
@@ -61,6 +73,10 @@ public class Kohli {
                 } else if (command.equalsIgnoreCase("mark")) {
                     int index = Integer.parseInt(inputParts[1]) - 1;
                     tasks.get(index).markAsDone();
+<<<<<<< HEAD
+=======
+                    Storage.saveTasksToFile(tasks);
+>>>>>>> branch-Level-7
                     System.out.println("____________________________________________________________");
                     System.out.println("Nice! I've marked this task as done:");
                     System.out.println("  " + tasks.get(index));
@@ -68,6 +84,10 @@ public class Kohli {
                 } else if (command.equalsIgnoreCase("unmark")) {
                     int index = Integer.parseInt(inputParts[1]) - 1;
                     tasks.get(index).unmarkAsDone();
+<<<<<<< HEAD
+=======
+                    Storage.saveTasksToFile(tasks);
+>>>>>>> branch-Level-7
                     System.out.println("____________________________________________________________");
                     System.out.println("OK, I've marked this task as not done yet:");
                     System.out.println("  " + tasks.get(index));
@@ -83,6 +103,10 @@ public class Kohli {
                     addTask(new Event(eventParts[0], timeParts[0], timeParts[1]));
                 } else if (command.equalsIgnoreCase("delete")) {
                     DeleteTask.removeTask(tasks, Integer.parseInt(inputParts[1]) - 1);
+<<<<<<< HEAD
+=======
+                    Storage.saveTasksToFile(tasks);
+>>>>>>> branch-Level-7
                 } else {
                     throw new KohliException("Sorry, I don't understand that command.");
                 }
@@ -97,6 +121,10 @@ public class Kohli {
 
     private static void addTask(Task task) {
         tasks.add(task);
+<<<<<<< HEAD
+=======
+        Storage.saveTasksToFile(tasks);
+>>>>>>> branch-Level-7
         System.out.println("____________________________________________________________");
         System.out.println("Got it. I've added this task:");
         System.out.println("  " + task);
