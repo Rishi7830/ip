@@ -3,3 +3,4 @@ T | 0 | go for tutorial
 T | 0 | buy coffee
 T | 0 | make ankushi not angry
 T | 0 | to worry my brain
+T | 0 | finish cs2113
