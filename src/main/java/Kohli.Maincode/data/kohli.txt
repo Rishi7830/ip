@@ -4,3 +4,5 @@ T | 0 | buy coffee
 T | 0 | make ankushi not angry
 T | 0 | to worry my brain
 T | 0 | finish cs2113
+T | 0 | buy bread
+E | 0 | rishi attend CS2113 lecture Friday 21 Feb 2025 | 4pm | 6pm
