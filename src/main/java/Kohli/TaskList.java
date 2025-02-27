@@ -1,7 +1,6 @@
 package Kohli;
 
 import Kohli.tasks.Task;
-
 import java.util.ArrayList;
 
 public class TaskList {
@@ -33,4 +32,19 @@ public class TaskList {
     public void save(Storage storage) throws KohliException {
         storage.save(tasks);
     }
+
+    /**
+     * Fix: Properly prints tasks using toString()
+     */
+    public void printTasks() {
+        if (tasks.isEmpty()) {
+            System.out.println("Your to-do list is empty!");
+        } else {
+            System.out.println("Here are the tasks in your to-do list:");
+            for (int i = 0; i < tasks.size(); i++) {
+                System.out.println((i + 1) + ". " + tasks.get(i).toString()); // Ensures toString() is used
+            }
+        }
+    }
 }
+
