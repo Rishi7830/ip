@@ -1,7 +1,6 @@
 package Kohli;
 
 import Kohli.tasks.Task;
-
 import java.util.ArrayList;
 
 public class TaskList {
@@ -32,5 +31,15 @@ public class TaskList {
 
     public void save(Storage storage) throws KohliException {
         storage.save(tasks);
+    }
+
+    public ArrayList<Task> findTasks(String keyword) {
+        ArrayList<Task> matchingTasks = new ArrayList<>();
+        for (Task task : tasks) {
+            if (task.getDescription().toLowerCase().contains(keyword)) {
+                matchingTasks.add(task);
+            }
+        }
+        return matchingTasks;
     }
 }
