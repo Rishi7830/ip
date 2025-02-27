@@ -1,4 +1,4 @@
-package Kohli.Maincode;
+package Kohli.tasks;
 
 public class Task {
     protected String description;
@@ -61,8 +61,4 @@ public class Task {
         return "[" + getStatusIcon() + "] " + description;
     }
 }
-
-
-
-
 

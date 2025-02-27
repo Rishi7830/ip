@@ -1,4 +1,4 @@
-# Kohli.Maincode.Kohli User Guide
+# Kohli.Kohli User Guide
 
 // Update the title above to match the actual product name
 

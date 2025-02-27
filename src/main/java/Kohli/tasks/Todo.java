@@ -1,4 +1,4 @@
-package Kohli.Maincode;
+package Kohli.tasks;
 
 public class Todo extends Task {
     public Todo(String description) {

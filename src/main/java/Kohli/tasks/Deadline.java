@@ -1,4 +1,4 @@
-package Kohli.Maincode;
+package Kohli.tasks;
 
 public class Deadline extends Task {
     protected String by;
@@ -13,4 +13,3 @@ public class Deadline extends Task {
         return "[D]" + super.toString() + " (by: " + by + ")";
     }
 }
-

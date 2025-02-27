@@ -1,4 +1,4 @@
-package Kohli.Maincode;
+package Kohli.tasks;
 
 public class Event extends Task {
     protected String from;
@@ -15,3 +15,4 @@ public class Event extends Task {
         return "[E]" + super.toString() + " (from: " + from + " to: " + to + ")";
     }
 }
+
