@@ -2,6 +2,6 @@ T | 0 | buy bread
 T | 0 | go for tutorial
 T | 0 | buy coffee
 T | 0 | to worry my brain
-T | 0 | buy bread
 E | 0 | rishi attend CS2113 lecture Friday 21 Feb 2025 | 4pm | 6pm
 T | 0 | buy choco
+T | 1 | buy sonali a gift
