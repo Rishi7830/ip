@@ -1,5 +1,14 @@
 D | 0 | return book | 2019-12-02 18:00
 D | 0 | Rishi Birthday | 2004-04-07 12:00
 T | 0 | buy bread
+<<<<<<< HEAD
 T | 0 | buy gift for mummy
 D | 0 | buy gift for mummy | 2025-06-02 07:00
+=======
+T | 0 | go for tutorial
+T | 0 | buy coffee
+T | 0 | to worry my brain
+E | 0 | rishi attend CS2113 lecture Friday 21 Feb 2025 | 4pm | 6pm
+T | 0 | buy choco
+T | 1 | buy sonali a gift
+>>>>>>> branch-A-JavaDoc
