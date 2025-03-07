@@ -34,6 +34,7 @@ public class Deadline extends Task {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
@@ -46,3 +47,9 @@ public class Deadline extends Task {
 >>>>>>> branch-A-JavaDoc
 =======
 >>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
+=======
+// Returns the string representation of Deadline with its type [D].
+        return "[D]" + super.toString() + " (by: " + by + ")";
+        }
+        }
+>>>>>>> branch-Level-8
