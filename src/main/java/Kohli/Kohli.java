@@ -40,7 +40,11 @@ public class Kohli {
 
     private void showPossibleErrors() {
         ui.showLine();
+<<<<<<< HEAD
         System.out.println("Possible Errors ");
+=======
+        System.out.println("  Possible Errors ");
+>>>>>>> branch-Level-8
         System.out.println(" Missing task description (e.g., 'todo' alone is invalid)");
         System.out.println(" Incorrect command format (e.g., missing /by for deadlines)");
         System.out.println(" Task number out of range for mark/unmark/delete");

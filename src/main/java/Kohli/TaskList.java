@@ -33,6 +33,7 @@ public class TaskList {
         storage.save(tasks);
     }
 
+<<<<<<< HEAD
     public ArrayList<Task> findTasks(String keyword) {
         ArrayList<Task> matchingTasks = new ArrayList<>();
         for (Task task : tasks) {
@@ -41,5 +42,20 @@ public class TaskList {
             }
         }
         return matchingTasks;
+=======
+    /**
+     * Fix: Properly prints tasks using toString()
+     */
+    public void printTasks() {
+        if (tasks.isEmpty()) {
+            System.out.println("Your to-do list is empty!");
+        } else {
+            System.out.println("Here are the tasks in your to-do list:");
+            for (int i = 0; i < tasks.size(); i++) {
+                System.out.println((i + 1) + ". " + tasks.get(i).toString()); // Ensures toString() is used
+            }
+        }
+>>>>>>> branch-Level-8
     }
 }
+
