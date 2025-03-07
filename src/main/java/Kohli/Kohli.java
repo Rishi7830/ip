@@ -43,6 +43,7 @@ public class Kohli {
     // Displays common user input errors for guidance (user-friendly).
     private void showPossibleErrors() {
         ui.showLine();
+        System.out.println("Possible Errors ");
         System.out.println("  Possible Errors ");
         System.out.println(" Possible Errors ");
         System.out.println(" Missing task description (e.g., 'todo' alone is invalid)");

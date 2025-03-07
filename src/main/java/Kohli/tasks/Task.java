@@ -100,6 +100,10 @@ public class Task {
         return task;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
     @Override
     public String toString() {
         // Returns a string representation of the task.

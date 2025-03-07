@@ -26,6 +26,11 @@ public class Parser {
                 return new AddDeadlineCommand(inputParts[1]);
             case "event":
                 return new AddEventCommand(inputParts[1]);
+            case "find":
+                if (inputParts.length < 2) {
+                    throw new KohliException("Please specify a keyword to search.");
+                }
+                return new FindCommand(inputParts[1]);
             default:
                 throw new KohliException("Invalid command.");
         }
