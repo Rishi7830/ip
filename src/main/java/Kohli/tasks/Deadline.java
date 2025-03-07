@@ -29,8 +29,7 @@ public class Deadline extends Task {
 }
 
 
-        // Returns the string representation of Deadline with its type [D].
+// Returns the string representation of Deadline with its type [D].
         return "[D]" + super.toString() + " (by: " + by + ")";
-    }
-}
-
+        }
+        }
