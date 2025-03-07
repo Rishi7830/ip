@@ -31,6 +31,9 @@ public class Task {
     // Converts the task into a formatted string suitable for file storage so the user can save it in text file.
     public String toFileString() {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
         if (this instanceof Todo) {
             return "T | " + (isDone ? "1" : "0") + " | " + description;
         } else if (this instanceof Deadline) {
@@ -39,12 +42,18 @@ public class Task {
             return "E | " + (isDone ? "1" : "0") + " | " + description + " | " + DateTimeParser.formatForFile(((Event) this).from) + " | " + DateTimeParser.formatForFile(((Event) this).to);
         }
         return ""; // Should never happen
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
         return (this instanceof Todo ? "T" : this instanceof Deadline ? "D" : "E") + " | "
                 + (isDone ? "1" : "0") + " | " + description
                 + (this instanceof Deadline ? " | " + ((Deadline) this).by : "")
                 + (this instanceof Event ? " | " + ((Event) this).from + " | " + ((Event) this).to : "");
+<<<<<<< HEAD
 >>>>>>> branch-A-JavaDoc
+=======
+>>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
     }
 
     // Parses a task from a formatted string from the saved file.
@@ -57,6 +66,9 @@ public class Task {
         Task task;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
         try {
             switch (type) {
                 case "T":
@@ -83,7 +95,10 @@ public class Task {
         } catch (DateTimeParseException e) {
             System.out.println("Warning: Invalid date format in file. Skipping entry.");
             return null;
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
         // Creates the appropriate task type based on the first character in the file.
         switch (type) {
             case "T":
@@ -99,7 +114,10 @@ public class Task {
                 break;
             default:
                 return null; // Returns null if it's an unknown task type.
+<<<<<<< HEAD
 >>>>>>> branch-A-JavaDoc
+=======
+>>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
         }
 
         if (isDone) task.markAsDone(); // Restores the task's completion status.

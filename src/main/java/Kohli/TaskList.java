@@ -55,6 +55,9 @@ public class TaskList {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
     public ArrayList<Task> findTasks(String keyword) {
         ArrayList<Task> matchingTasks = new ArrayList<>();
         for (Task task : tasks) {
@@ -63,7 +66,10 @@ public class TaskList {
             }
         }
         return matchingTasks;
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
     /**
      * Fix: Properly prints tasks using toString()
      */
@@ -76,7 +82,10 @@ public class TaskList {
                 System.out.println((i + 1) + ". " + tasks.get(i).toString()); // Ensures toString() is used
             }
         }
+<<<<<<< HEAD
 >>>>>>> branch-Level-8
+=======
+>>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
     }
 }
 

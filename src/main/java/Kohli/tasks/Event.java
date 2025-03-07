@@ -23,7 +23,12 @@ public class Event extends Task {
     @Override
     public String toString() {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
         return "[E]" + super.toString() + " (from: " + DateTimeParser.format(from) + " to: " + DateTimeParser.format(to) + ")";
+        // Returns the string representation of Event with its type [E].
+        return "[E]" + super.toString() + " (from: " + from + " to: " + to + ")";
     }
 
     @Override
@@ -31,6 +36,7 @@ public class Event extends Task {
         return "E | " + (isDone ? "1" : "0") + " | " + description + " | " + DateTimeParser.formatForFile(from) + " | " + DateTimeParser.formatForFile(to);
     }
 }
+<<<<<<< HEAD
 =======
         // Returns the string representation of Event with its type [E].
         return "[E]" + super.toString() + " (from: " + from + " to: " + to + ")";
@@ -39,3 +45,6 @@ public class Event extends Task {
 
 
 >>>>>>> branch-A-JavaDoc
+=======
+
+>>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883

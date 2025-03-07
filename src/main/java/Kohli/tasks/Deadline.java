@@ -20,6 +20,9 @@ public class Deadline extends Task {
     @Override
     public String toString() {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
         return "[D]" + super.toString() + " (by: " + DateTimeParser.format(by) + ")";
     }
 
@@ -30,10 +33,16 @@ public class Deadline extends Task {
 }
 
 
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
         // Returns the string representation of Deadline with its type [D].
         return "[D]" + super.toString() + " (by: " + by + ")";
     }
 }
 
+<<<<<<< HEAD
 >>>>>>> branch-A-JavaDoc
+=======
+>>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
