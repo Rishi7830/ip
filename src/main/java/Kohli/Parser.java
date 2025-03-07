@@ -2,11 +2,13 @@ package Kohli;
 
 import Kohli.commands.*;
 
+// Handles parsing of user input and converts it into executable commands.
 public class Parser {
     public static Command parse(String userInput) throws KohliException {
         String[] inputParts = userInput.split(" ", 2);
         String command = inputParts[0];
 
+        // Matches the user command to the corresponding Command class.
         switch (command) {
             case "bye":
                 return new ExitCommand();
