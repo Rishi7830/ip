@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 public class Deadline extends Task {
     protected LocalDateTime by;
 
+    // Constructs a Deadline with description and date.
     public Deadline(String description, String by) {
         super(description);
         this.by = DateTimeParser.parse(by);
@@ -27,4 +28,9 @@ public class Deadline extends Task {
     }
 }
 
+
+        // Returns the string representation of Deadline with its type [D].
+        return "[D]" + super.toString() + " (by: " + by + ")";
+    }
+}
 
