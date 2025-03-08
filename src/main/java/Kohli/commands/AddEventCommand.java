@@ -6,9 +6,9 @@ import Kohli.tasks.Task;
 
 // Handles the "event" command to add a new Event task.
 public class AddEventCommand extends Command {
-    private String description;
-    private String from;
-    private String to;
+    private final String description;
+    private final String from;
+    private final String to;
 
     /**
      * Constructs an AddEventCommand by parsing user input.

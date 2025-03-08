@@ -3,9 +3,9 @@ package Kohli;
 import Kohli.commands.Command;
 
 public class Kohli {
-    private Storage storage;
+    private final Storage storage; // Marked as final
+    private final Ui ui; // Marked as final
     private TaskList tasks;
-    private Ui ui;
 
     // Initializes chatbot, setting up the UI, storage, and task list.
     public Kohli(String filePath) {
@@ -15,27 +15,27 @@ public class Kohli {
             tasks = new TaskList(storage.load()); // Load tasks from the file.
         } catch (KohliException e) {
             ui.showLoadingError(); // Show an error if loading fails.
-            tasks = new TaskList(); // Start with an empty task list.
+            tasks = new TaskList();
         }
     }
 
     // Runs the chatbot, processing user commands.
     public void run() {
-        ui.showWelcome(); // Display welcome message.
-        showPossibleErrors(); // Show possible user errors.
+        ui.showWelcome();
+        showPossibleErrors();
 
         boolean isExit = false;
         while (!isExit) {
             try {
-                String fullCommand = ui.readCommand(); // Read user input.
+                String fullCommand = ui.readCommand();
                 ui.showLine();
                 Command c = Parser.parse(fullCommand); // Parse input into appropriate command.
                 c.execute(tasks, ui, storage); // Executes the command.
                 isExit = c.isExit(); // Check if the command is an exit command.
             } catch (KohliException e) {
-                ui.showError(e.getMessage()); // Handle invalid input.
+                ui.showError(e.getMessage());
             } finally {
-                ui.showLine(); // Print a line for clarity.
+                ui.showLine();
             }
         }
     }
@@ -56,3 +56,4 @@ public class Kohli {
         new Kohli("C:\\Users\\Rishi Moorthy\\Desktop\\ip\\src\\main\\java\\Kohli\\data\\kohli.txt").run();
     }
 }
+

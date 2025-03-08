@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 // Handles loading and saving of tasks to file.
 public class Storage {
-    private String filePath;
+    private final String filePath; // Marked as final since it is never reassigned.
 
     // Constructs a Storage with the file path.
     public Storage(String filePath) {
@@ -14,7 +14,7 @@ public class Storage {
     }
 
     /**
-     * Loads tasks from the storage file and returns them as list.
+     * Loads tasks from the storage file and returns them as a list.
      * @return A list of tasks loaded from the file.
      * @throws KohliException If an error occurs while reading the file.
      */
@@ -22,12 +22,14 @@ public class Storage {
         ArrayList<Task> tasks = new ArrayList<>();
         File file = new File(filePath);
 
-        // Creates the directories if the file does not exist.
+        // Ensure the parent directories exist before reading the file.
         if (!file.exists()) {
-            file.getParentFile().mkdirs();
+            if (!file.getParentFile().mkdirs()) {
+                throw new KohliException("Failed to create directories for storage file.");
+            }
         }
 
-        // Reads the file by each line and converts each line into a Task object.
+        // Reads the file line by line and converts each line into a Task object.
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -44,8 +46,8 @@ public class Storage {
 
     /**
      * Saves the given list of tasks to the storage file.
-     * @param tasks Makes the list of tasks to be saved.
-     * @throws KohliException If an error occurs.
+     * @param tasks The list of tasks to be saved.
+     * @throws KohliException If an error occurs while saving.
      */
     public void save(ArrayList<Task> tasks) throws KohliException {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
@@ -58,5 +60,6 @@ public class Storage {
         }
     }
 }
+
 
 

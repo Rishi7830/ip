@@ -6,8 +6,8 @@ import Kohli.tasks.Task;
 
 // Handles the "deadline" command to add a new Deadline task.
 public class AddDeadlineCommand extends Command {
-    private String description;
-    private String by;
+    private final String description;
+    private final String by;
 
     /**
      * Constructs an AddDeadlineCommand by parsing user input.

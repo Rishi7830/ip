@@ -7,7 +7,7 @@ import Kohli.tasks.Task;
 import java.util.ArrayList;
 
 public class FindCommand extends Command {
-    private String keyword;
+    private final String keyword;
 
     public FindCommand(String keyword) {
         this.keyword = keyword.toLowerCase(); // Convert to lowercase for case-insensitive search

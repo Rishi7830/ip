@@ -3,8 +3,6 @@ package Kohli.tasks;
 import Kohli.util.DateTimeParser;
 import java.time.LocalDateTime;
 
-import java.time.LocalDateTime;
-
 public class Event extends Task {
     protected LocalDateTime from;
     protected LocalDateTime to;

@@ -1,14 +1,7 @@
 D | 0 | Rishi Birthday | 2004-04-07 12:00
-T | 0 | buy bread
-T | 0 | buy gift for mummy
-D | 0 | buy gift for mummy | 2025-06-02 07:00
-T | 0 | buy gift for mummy
-D | 0 | buy gift for mummy | 2025-06-02 07:00
-T | 0 | go for tutorial
-T | 0 | buy coffee
-T | 0 | to worry my brain
-T | 0 | buy choco
-T | 1 | buy sonali a gift
-T | 1 | buy sonali a gift
-D | 0 | return cricket bat | 2019-12-02 18:00
+T | 1 | buy bread
+D | 1 | buy gift for mummy | 2025-06-02 07:00
+T | 1 | go for tutorial
+T | 1 | buy coffee
 D | 0 | finish CS2113 IP | 2019-12-02 18:00
+T | 0 | RCB should win IPL

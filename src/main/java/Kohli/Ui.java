@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 // Handles user interactions like displaying messages and reading user input.
 public class Ui {
-    private Scanner scanner; // Scanner to read user input.
+    private final Scanner scanner; // Marked as final since it is never reassigned.
 
     // Initializes the UI and sets up the scanner to read commands.
     public Ui() {
@@ -13,14 +13,19 @@ public class Ui {
 
     // Displays the welcome message, logo, and commands menu.
     public void showWelcome() {
-        String logo = "  _  ___   ____  _      ___ \n"
-                + " | |/ (_) |  _ \\| |    |_ _|\n"
-                + " | ' / _  | | | | |     | | \n"
-                + " | . \\| | | |_| | |___  | | \n"
-                + " |_|\\_\\_| |____/|_____| |___|\n";
-        String man = "  O  \n"
-                + " /|\\ \n"
-                + " / \\ \n";
+        String logo = """
+              _  ___   ____  _      ___
+             | |/ (_) |  _ \\| |    |_ _|
+             | ' / _  | | | | |     | |
+             | . \\| | | |_| | |___  | |
+             |_|\\_\\_| |____/|_____| |___|
+             """;
+
+        String man = """
+              O
+             /|\\
+             / \\
+             """;
 
         System.out.println(logo);
         System.out.println(man);
@@ -57,7 +62,7 @@ public class Ui {
 
     // Displays an error message.
     public void showError(String message) {
-        System.out.println("⚠ " + message);
+        System.out.println("Oh no! " + message);
     }
 
     // Displays an error message when the task loading fails.
@@ -69,5 +74,6 @@ public class Ui {
         System.out.println(message);
     }
 }
+
 
 

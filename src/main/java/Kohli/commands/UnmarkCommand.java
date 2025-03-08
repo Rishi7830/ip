@@ -8,7 +8,7 @@ import Kohli.tasks.Task;
 
 // Handles the "unmark" command to mark a task as not completed.
 public class UnmarkCommand extends Command {
-    private int taskIndex;
+    private final int taskIndex;
 
     /**
      * Constructs an UnmarkCommand by parsing the task index from user input.

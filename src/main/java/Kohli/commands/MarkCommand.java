@@ -8,7 +8,7 @@ import Kohli.tasks.Task;
 
 // Handles the "mark" command to mark a task as completed.
 public class MarkCommand extends Command {
-    private int taskIndex;
+    private final int taskIndex;
 
     /**
      * Constructs a MarkCommand by parsing the task index from user input.

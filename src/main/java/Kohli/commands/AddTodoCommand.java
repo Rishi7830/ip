@@ -6,7 +6,7 @@ import Kohli.tasks.Todo;
 
 // Handles the "todo" command to add a new Todo task.
 public class AddTodoCommand extends Command {
-    private String description;
+    private final String description;
 
     /**
      * Constructs an AddTodoCommand with the given task description.

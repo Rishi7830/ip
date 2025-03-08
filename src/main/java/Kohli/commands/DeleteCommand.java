@@ -8,7 +8,7 @@ import Kohli.tasks.Task;
 
 // Handles the "delete" command to remove a task from the task list.
 public class DeleteCommand extends Command {
-    private int taskIndex;
+    private final int taskIndex;
 
     /**
      * Constructs a DeleteCommand by parsing the task index from user input.

@@ -37,7 +37,7 @@ public class Task {
         } else if (this instanceof Event) {
             return "E | " + (isDone ? "1" : "0") + " | " + description + " | " + DateTimeParser.formatForFile(((Event) this).from) + " | " + DateTimeParser.formatForFile(((Event) this).to);
         }
-        return ""; // Should never happen
+        return "";
     }
 
     // Parses a task from a formatted string from the saved file.
@@ -53,7 +53,7 @@ public class Task {
         try {
             switch (type) {
                 case "T":
-                    task = new Todo(description); // ✅ Correctly loads `Todo`
+                    task = new Todo(description);
                     break;
                 case "D":
                     if (parts.length < 4) {

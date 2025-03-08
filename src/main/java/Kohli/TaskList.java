@@ -4,7 +4,7 @@ import Kohli.tasks.Task;
 import java.util.ArrayList;
 
 public class TaskList {
-    private ArrayList<Task> tasks;
+    private final ArrayList<Task> tasks; // Marked as final since it is never reassigned.
 
     public TaskList() {
         this.tasks = new ArrayList<>();
@@ -33,19 +33,18 @@ public class TaskList {
         storage.save(tasks);
     }
 
-    /**
-     * Fix: Properly prints tasks using toString()
-     */
+    @SuppressWarnings("unused")
     public void printTasks() {
         if (tasks.isEmpty()) {
             System.out.println("Your to-do list is empty!");
         } else {
             System.out.println("Here are the tasks in your to-do list:");
             for (int i = 0; i < tasks.size(); i++) {
-                System.out.println((i + 1) + ". " + tasks.get(i).toString()); // Ensures toString() is used
+                System.out.println((i + 1) + ". " + tasks.get(i).toString());
             }
         }
     }
+
     public ArrayList<Task> findTasks(String keyword) {
         ArrayList<Task> matchingTasks = new ArrayList<>();
         for (Task task : tasks) {
@@ -56,6 +55,8 @@ public class TaskList {
         return matchingTasks;
     }
 }
+
+
 
 
 
