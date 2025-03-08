@@ -30,10 +30,6 @@ public class Task {
 
     // Converts the task into a formatted string suitable for file storage so the user can save it in text file.
     public String toFileString() {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
         if (this instanceof Todo) {
             return "T | " + (isDone ? "1" : "0") + " | " + description;
         } else if (this instanceof Deadline) {
@@ -42,37 +38,22 @@ public class Task {
             return "E | " + (isDone ? "1" : "0") + " | " + description + " | " + DateTimeParser.formatForFile(((Event) this).from) + " | " + DateTimeParser.formatForFile(((Event) this).to);
         }
         return ""; // Should never happen
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
-        return (this instanceof Todo ? "T" : this instanceof Deadline ? "D" : "E") + " | "
-                + (isDone ? "1" : "0") + " | " + description
-                + (this instanceof Deadline ? " | " + ((Deadline) this).by : "")
-                + (this instanceof Event ? " | " + ((Event) this).from + " | " + ((Event) this).to : "");
-<<<<<<< HEAD
->>>>>>> branch-A-JavaDoc
-=======
->>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
     }
 
     // Parses a task from a formatted string from the saved file.
     public static Task fromFileString(String line) {
         String[] parts = line.split(" \\| ");
-        if (parts.length < 3) return null;
+        if (parts.length < 3) return null; // Prevents skipping valid tasks
+
         String type = parts[0];
         boolean isDone = parts[1].equals("1");
         String description = parts[2];
         Task task;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
         try {
             switch (type) {
                 case "T":
-                    task = new Todo(description); // ✅ Todo tasks don't have dates
+                    task = new Todo(description); // ✅ Correctly loads `Todo`
                     break;
                 case "D":
                     if (parts.length < 4) {
@@ -95,32 +76,9 @@ public class Task {
         } catch (DateTimeParseException e) {
             System.out.println("Warning: Invalid date format in file. Skipping entry.");
             return null;
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
-        // Creates the appropriate task type based on the first character in the file.
-        switch (type) {
-            case "T":
-                task = new Todo(description);
-                break;
-            case "D":
-                if (parts.length < 4) return null; // Ensures deadlines have valid dates.
-                task = new Deadline(description, parts[3]);
-                break;
-            case "E":
-                if (parts.length < 5) return null; // Ensures events have start and end dates.
-                task = new Event(description, parts[3], parts[4]);
-                break;
-            default:
-                return null; // Returns null if it's an unknown task type.
-<<<<<<< HEAD
->>>>>>> branch-A-JavaDoc
-=======
->>>>>>> 397cfaf78f906e487f1c206b5aeabf340d66e883
         }
 
-        if (isDone) task.markAsDone(); // Restores the task's completion status.
+        if (isDone) task.markAsDone();
         return task;
     }
 
