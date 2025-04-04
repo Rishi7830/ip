@@ -32,11 +32,11 @@ todo Buy groceries
 Adds a task with a specific deadline.
 #### Format:
 ```sh
-deadline <task description> /by <yyyy-mm-dd hhmm>
+deadline <task description> /by <dd/mm/yyyy hhmm>
 ```
 **Example:**
 ```sh
-deadline Submit report /by 2024-04-15 2359
+deadline Submit report /by <dd/mm/yyyy hhmm>
 ```
 
 ### 3. Adding an Event Task: `event`
