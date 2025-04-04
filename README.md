@@ -17,14 +17,7 @@ Kohli is a command-line chatbot designed to help users efficiently manage tasks.
 
 ## Features
 
-### 1. Viewing Help: `help`
-Displays a message explaining how to use the chatbot.
-#### Format:
-```sh
-help
-```
-
-### 2. Adding a To-Do Task: `todo`
+### 1. Adding a To-Do Task: `todo`
 Adds a simple task without a specific deadline.
 #### Format:
 ```sh
@@ -35,7 +28,7 @@ todo <task description>
 todo Buy groceries
 ```
 
-### 3. Adding a Deadline Task: `deadline`
+### 2. Adding a Deadline Task: `deadline`
 Adds a task with a specific deadline.
 #### Format:
 ```sh
@@ -46,7 +39,7 @@ deadline <task description> /by <yyyy-mm-dd hhmm>
 deadline Submit report /by 2024-04-15 2359
 ```
 
-### 4. Adding an Event Task: `event`
+### 3. Adding an Event Task: `event`
 Adds a task with a specific start and end time.
 #### Format:
 ```sh
@@ -57,14 +50,14 @@ event <task description> /from <yyyy-mm-dd hhmm> /to <yyyy-mm-dd hhmm>
 event Team meeting /from 2024-04-15 1400 /to 2024-04-15 1600
 ```
 
-### 5. Listing All Tasks: `list`
+### 4. Listing All Tasks: `list`
 Displays all tasks in the list.
 #### Format:
 ```sh
 list
 ```
 
-### 6. Marking a Task as Done: `mark`
+### 5. Marking a Task as Done: `mark`
 Marks a specific task as completed.
 #### Format:
 ```sh
@@ -75,7 +68,7 @@ mark <task number>
 mark 2
 ```
 
-### 7. Unmarking a Task: `unmark`
+### 6. Unmarking a Task: `unmark`
 Marks a specific task as incomplete.
 #### Format:
 ```sh
@@ -86,7 +79,7 @@ unmark <task number>
 unmark 2
 ```
 
-### 8. Deleting a Task: `delete`
+### 7. Deleting a Task: `delete`
 Removes a specific task from the list.
 #### Format:
 ```sh
@@ -97,7 +90,7 @@ delete <task number>
 delete 3
 ```
 
-### 9. Finding a Task: `find`
+### 8. Finding a Task: `find`
 Searches for tasks containing a keyword.
 #### Format:
 ```sh
@@ -108,7 +101,7 @@ find <keyword>
 find report
 ```
 
-### 10. Exiting the Chatbot: `bye`
+### 9. Exiting the Chatbot: `bye`
 Ends the chatbot session.
 #### Format:
 ```sh
