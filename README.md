@@ -1,96 +1,146 @@
-# Rishi7830's Project Portfolio Page
+# Kohli Chatbot - User Guide
 
-CEG Study Buddy is a CLI-based educational planning tool designed to help Computer Engineering students manage their academic journey. The application supports adding, deleting, finding, and managing courses, checking graduation requirements, and offering undo functionality. It emphasizes robust error handling and clean modular architecture.
+## Introduction
+Kohli is a command-line chatbot designed to help users efficiently manage tasks. With Kohli, you can add different types of tasks, mark tasks as completed, find tasks, and save your task list for future use. This guide will walk you through how to use Kohli and its available features.
 
-Below are my contributions to the project.
+## Quick Start
 
----
+1. Ensure **Java 17** or above is installed on your computer.
+2. Download the latest **Kohli.jar** file from the repository.
+3. Open a terminal and navigate to the folder containing **Kohli.jar**.
+4. Run the chatbot using the command:
+   ```sh
+   java -jar Kohli.jar
+   ```
+5. Start entering commands to interact with the chatbot.
+6. Refer to the features below for details on available commands.
 
-### Features Implemented
+## Features
 
-- **`ListCommand`**: Dynamically displays all courses grouped by year and semester, showing only non-empty semesters for a cleaner UI.
-- **`DeleteCourse`**: Enables users to delete a course using the course code (e.g., `delete c/CS2040`) with format validation.
-- **`GradRequirementCommand`**: Calculates and displays total completed MCs and checks if user meets graduation requirements, with ASCII motivational output.
-- **`PrereqCommand`**: Shows prerequisites and descriptions for core Computer Engineering modules using a pre-defined internal map.
-- **`Undo` and `Summary` Commands**: Allows users to undo previous `add`, `delete`, and `replace` operations and view session command history.
-- **`ReplaceCommand`**: Allows replacement of one course with another while maintaining key details like MCs, year, and semester.
-- **`FindCommand`**: Searches and retrieves course details by code with strict format validation and helpful outputs.
-- **`Parser`**: Assisted in the making of the parser class to parse all the commands
-- **`UndoManager Class`**: Created the UndoManager Class to support the functionality of the Undo Command to undo the operations of:
-  - Add
-  - Delete
-  - Replace
-  - Edit
-- **`CourseHistoryManager Class`**: Created the Course History Manager Class to support the functionality of the Summary command to list out all the commands executed by the user during the session
+### 1. Adding a To-Do Task: `todo`
+Adds a simple task without a specific deadline.
+#### Format:
+```sh
+todo <task description>
+```
+**Example:**
+```sh
+todo Buy groceries
+```
 
----
+### 2. Adding a Deadline Task: `deadline`
+Adds a task with a specific deadline.
+#### Format:
+```sh
+deadline <task description> /by <dd/mm/yyyy hhmm>
+```
+**Example:**
+```sh
+deadline Submit report /by <dd/mm/yyyy hhmm>
+```
 
-## Code Contributed
-[Link to the Code Dashboard](https://nus-cs2113-ay2425s2.github.io/tp-dashboard/?search=Rishi7830&breakdown=true)
----
+### 3. Adding an Event Task: `event`
+Adds a task with a specific start and end time.
+#### Format:
+```sh
+event <task description> /from <yyyy-mm-dd hhmm> /to <yyyy-mm-dd hhmm>
+```
+**Example:**
+```sh
+event Team meeting /from 2024-04-15 1400 /to 2024-04-15 1600
+```
 
-## Project Management
+### 4. Listing All Tasks: `list`
+Displays all tasks in the list.
+#### Format:
+```sh
+list
+```
 
-### Timely Task Completion
-- Handled and resolved all assigned issues for releases **V1.0**, **V2.0**, and **V2.1** promptly—never submitted last minute.
+### 5. Marking a Task as Done: `mark`
+Marks a specific task as completed.
+#### Format:
+```sh
+mark <task number>
+```
+**Example:**
+```sh
+mark 2
+```
 
-### Team Collaboration
-- Supported the team actively for all milestone releases by:
-    - Coordinating work in GitHub projects
-    - Resolving blockers and merge conflicts
-    - Helping in code integration and testing
-- Regularly checked on teammates’ progress and assisted them in bug-fixing and refining features.
-- Initiated Issue on the Github Issue Tracker and took responsibility and completed them on time
+### 6. Unmarking a Task: `unmark`
+Marks a specific task as incomplete.
+#### Format:
+```sh
+unmark <task number>
+```
+**Example:**
+```sh
+unmark 2
+```
 
----
+### 7. Deleting a Task: `delete`
+Removes a specific task from the list.
+#### Format:
+```sh
+delete <task number>
+```
+**Example:**
+```sh
+delete 3
+```
 
-## Enhancements to Existing Features
+### 8. Finding a Task: `find`
+Searches for tasks containing a keyword.
+#### Format:
+```sh
+find <keyword>
+```
+**Example:**
+```sh
+find report
+```
 
-### Junit Testing
-- Wrote additional JUnit tests for commands including:
-    - `AddCommand`, `DeleteCourse`, `FindCommand`, `GradRequirementCommand`, `ListCommand`, and `CourseManagerTest`
+### 9. Exiting the Chatbot: `bye`
+Ends the chatbot session.
+#### Format:
+```sh
+bye
+```
 
-### Robust Input Validation across Commands
-- Improved input validation across multiple commands to:
-    - Reject decimal/floating inputs for MCs, year, and semester
-    - Handle commands with leading whitespaces
-    - Enforce valid course code formats (e.g., CS2040, EE2026, CG2111A)
-    - Ensure MCs (1–12), years (1–4), and semesters (1 or 2) are strictly validated
+## Saving and Loading Tasks
+Kohli automatically saves tasks to a file when you exit and reloads them when you restart the chatbot.
 
----
+## FAQ
+### Q: How do I install Java 17?
+Visit [Java’s official site](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) to download and install Java 17.
 
-## Documentation
+### Q: Can I edit the task list manually?
+Yes, tasks are saved in a text file. You can edit it, but incorrect formatting may cause errors.
 
-### User Guide
+### Q: What happens if I enter an invalid command?
+Kohli will display an error message and prompt you to enter a valid command.
 
-- Documented the following features:  
-  `delete`, `find`, `replace`, `gradreq`, `list`, `prereq`, `undo`, `summary`
-- Wrote detailed user stories to shape the early stages of feature planning.
+## Known Issues
+- Incorrect formatting of dates or commands may result in errors.
+- Manual modifications to the task file may cause the chatbot to malfunction.
+- Tasks exceeding the file storage limit may not be saved properly.
 
-### Developer Guide
+## Command Summary
+| Action         | Format                                      | Example                                      |
+|---------------|-------------------------------------------|---------------------------------------------|
+| Help          | `help`                                    | `help`                                     |
+| Add To-Do    | `todo <task>`                             | `todo Buy groceries`                        |
+| Add Deadline | `deadline <task> /by <yyyy-mm-dd hhmm>`  | `deadline Submit report /by 2024-04-15 2359` |
+| Add Event    | `event <task> /from <yyyy-mm-dd hhmm> /to <yyyy-mm-dd hhmm>` | `event Team meeting /from 2024-04-15 1400 /to 2024-04-15 1600` |
+| List Tasks   | `list`                                    | `list`                                     |
+| Mark Task    | `mark <task number>`                      | `mark 2`                                   |
+| Unmark Task  | `unmark <task number>`                    | `unmark 2`                                 |
+| Delete Task  | `delete <task number>`                    | `delete 3`                                 |
+| Find Task    | `find <keyword>`                          | `find report`                              |
+| Exit         | `bye`                                     | `bye`                                      |
 
-- Contributed significantly to the V2.0 Developer Guide:
-    - Authored sections on **Product Scope**, **User Stories**, and **Instructions for Manual Testing**
-    - Explained implementation for key classes like `UndoManager` and `CommandHistoryManager`
-    - Assisted in creating and reviewing UML diagrams:
-        - `CommandComponentDiagram`
-        - `UndoManagerClassDiagram`
-        - `CommandHistoryManagerClassDiagram`
-        - `ReplaceCommandSequenceDiagram`
 
----
 
-## Tools Used
+Now you're ready to manage your tasks efficiently with Kohli! 🚀
 
-- **IDE**: IntelliJ IDEA
-- **Version Control**: Git, GitHub, SourceTree
-- **Resources**: StackOverflow, Khan Academy
-
----
-
-## Community Contributions
-
-- Reviewed teammates’ PRs and provided constructive feedback.
-- Reported **16 bugs** during the PE Dry Run for peers’ applications, helping improve their software before evaluations.
-
----
